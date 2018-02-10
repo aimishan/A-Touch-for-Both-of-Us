@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8"></meta>
+        <script src="vue.js"></script>
+        <link rel="stylesheet" type="text/css" href="animate.css"></link>
+        <style>
+            * {
+                box-sizing: border-box;
+                padding: 0px;
+                margin: 0px;
+            }
+            #all {
+                width: 300px;
+                height: auto;
+                position: absolute;
+                left: 0px;
+                top: 0px;
+            }
+            .slidebar-container {
+                width: 300px;
+                height: 600px;
+                position: relative;
+                left: 0px;
+                top: 0px;
+                background-color: #3f3f3f;
+            }
+            .slidebar-container-disappear {
+                left: -300px;
+            }
+            .slidebar-container-appear {
+                left: 0px;
+            }
+            .slidebar-content {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                left: 0px;
+                top: 0px;
+            }
+            .slidebar {
+                width: 100%;
+                height: 100%;
+                padding-top: 2em;
+            }
+            .slidebar-item {
+                list-style: none;
+                margin-top: 1em;
+                margin-bottom: 1em;
+            }
+            .slidebar-item a {
+                text-decoration: none;
+                display: inline-block;
+                width: 100%;
+                padding-top: .4em;
+                padding-bottom: .4em;
+                padding-left: 1em;
+                color: #ededed;
+                transition: .2s ease;
+            }
+            .slidebar-item a:hover {
+                background-color: #526af3;
+                color: #fefefe;
+            }
+            #btn {
+                width: 300px;
+                height: 2em;
+                text-align: center;
+            }
+            #btn a {
+                display: inline-block;
+                width: 100%;
+                padding: .5em;
+                text-decoration: none;
+                background-color: #8f8f8f;
+                color: #fefefe;
+                transition: .2s ease;
+            }
+            #btn a:hover {
+                background-color: #526af3;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="all">
+            <transition 
+                name="slide"
+                enter-active-class="animated slideInLeft"
+                leave-active-class="animated slideOutLeft">
+                <div id="slidebar-box" class="slidebar-container" v-if="show">
+                    <div class="slidebar-content">
+                        <ul class="slidebar">
+                            <li class="slidebar-item"><a class="" href="#">Slidebar-item</a></li>
+                            <li class="slidebar-item"><a class="" href="#">Slidebar-item</a></li>
+                            <li class="slidebar-item"><a class="" href="#">Slidebar-item</a></li>
+                            <li class="slidebar-item"><a class="" href="#">Slidebar-item</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </transition>
+            <div id="btn">
+                <a href="#" v-on:click="show=!show">Click</a>
+            </div>
+        </div>
+        <script>
+            vm = new Vue({
+                el: "#all",
+                data: {
+                    show: false
+                }
+            })
+        </script>
+    </body>
+</html>
