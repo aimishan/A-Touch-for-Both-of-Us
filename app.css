@@ -1,0 +1,12 @@
+@font-face {
+    font-family: DroidSansMono;
+    src: url('DroidSansMono.ttf');
+}
+
+* {
+    font-family: DroidSansMono;
+    font-size: 10px;
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
