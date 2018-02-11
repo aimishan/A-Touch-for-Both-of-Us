@@ -9,12 +9,95 @@
     </head>
     <body>
         <div id="main-container">
-            <div id="bottombar-container"></div>
-            <div id="slidebar-container"></div>
+            <div id="bottombar-container">
+                <ul id="bottombar-list">
+                    <li><a v-on:click="toggleSlidebar" class="bottombar-item" href="#">故事</a></li>
+                    <li><a v-on:click="toggleLetters" class="bottombar-item" href="#">小纸条</a></li>
+                    <li><a v-on:click="toggleDiscovery" class="bottombar-item" href="#">发现</a></li>
+                    <li><a v-show="controlbarShow" v-on:click="switchPhotoLeft" class="bottombar-item" href="#">&lt;</a></li>
+                    <li><a v-show="controlbarShow" v-on:click="switchPhotoRight" class="bottombar-item" href="#">&gt;</a></li>
+                    <li id="bottombar-item-right"><a v-on:click="toggleAbout" class="bottombar-item" href="#">关于</a></li>
+                </ul>
+            </div>
+            <div id="slidebar-container">
+                <transition
+                    name="slide"
+                    enter-active-class="animated fadeInLeft"
+                    leave-active-class="animated fadeOutLeft">
+                    <div id="slidebar" v-show="slidebarShow">
+                        <ul id="slidebar-list">
+                            <li><a class="slidebar-item" href="#">心跳的遗迹</a></li>
+                            <li><a class="slidebar-item" href="#">罗曼史发端</a></li>
+                            <li><a class="slidebar-item" href="#">表白</a></li>
+                            <li><a class="slidebar-item" href="#">关于写作和孤独的想法</a></li>
+                            <li><a class="slidebar-item" href="#">从过去到现在，再到未来</a></li>
+                        </ul>
+                    </div>
+                </transition>
+            </div>
             <div id="essays-container"></div>
-            <div id="letters-container"></div>
-            <div id="photos-container"></div>
-            <div id="about-container"></div>
+            <div id="letters-container">
+                <transition
+                    name="letters"
+                    enter-active-class="animated fadeInUp"
+                    leave-active-class="animated fadeOutDown">
+                    <div id="letters" v-show="lettersShow">
+                        <div id="letters-box">
+                            <ul class="letters-list">
+                                <li><a class="letters-item" href="#">如果是想要埋起来的心情，那就埋起来。不过我的好心情和坏心情，以前就都会告诉你了。我在哪，我在做什么，我要改变什么，老早老早以前就有告诉你的习惯了。你的想藏起来的小小世界，那就藏好吧:)</a></li>
+                                <li><a class="letters-item" href="#">你呀，就是最好最好的礼物。我说我们交往一年多了，这是正确的。然后我说，其实喜欢上你，也有一年多了。这是被兑现的喜欢，这是被幸运砸中的喜欢，这是被祝福的喜欢。</a></li>
+                                <li><a class="letters-item" href="#">大概就是全世界都已经知道我在喜欢你，我却不敢让你知道。</a></li>
+                                <li><a class="letters-item" href="#">好，我知道，其实我也很幼稚——在很多很多的时候。这些天里面，包括我的感冒都在慢慢好转——别的，也都在升温。我哪会觉得你啰嗦呀，有时候想想，能听到你说话就特别高兴——况且，还有以后的一生。</a></li>
+                                <li><a class="letters-item" href="#">当我意识到我的下半生是你的时候，我便迫切地希望下半生马上开始。</a></li>
+                                <li><a class="letters-item" href="#">当我承认了、默许了自己差劲的时候，你上来安慰，会让人更提不起精神的。碰到我这样的情况就是，你听我抱怨完了，回复一个“~”表示你知道就行了，不用绞尽脑汁想什么安慰的话。</a></li>
+                                <li><a class="letters-item" href="#">有一句话：“因为最好的人就值得最好的结果。”这句话，说给你听，也好。</a></li>
+                                <li><a class="letters-item" href="#">人生嘛，就是不停地发现问题，然后解决问题。而不是像高中数学题，发现问题，放弃解答，然后被踹出局。</a></li>
+                                <li><a class="letters-item" href="#">曾经能和你一起去都江堰，我很庆幸。那时候走在路上，我突然发现，当我的身边只有你的时候，我总想告诉你自己的心迹。可我害怕最后的你的答案。我说：“其实最重要的事情，不是我们要去哪，不是我们要做什么，而是我们和谁在一起。”我想你知道，只要和你在一起，不论去哪里，不论做什么，都很有意义，都让人无法忘记。</a></li>
+                                <li><a class="letters-item" href="#">“当你想折什么的时候，先剪出一张正方形的纸来，然后对折，对角对折，总是不会错的。不管是千纸鹤，心形还是玫瑰花，都要经过这样的步骤。光听我说当然没有用，你得跟着我一步一步，把过程都记住。一旦学会了，再仔细琢磨琢磨怎么折得好看，你就算真正学会它了。”</a></li>
+                                <li><a class="letters-item" href="#">我等你。你慢慢来。让我先把生活中的很多问题经历过去，然后我就能看着你朝我跑来了。因为你可是要和我共同度过一生的人。</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </transition>
+            </div>
+            <div id="photos-container">
+                <transition
+                    name="photo"
+                    enter-active-class="animated slideInDown"
+                    leave-active-class="animated slideOutDown">
+                    <div id="photos" v-show="discoveryShow">
+                        <div id="photo-player">
+                            <div id="photo-player-container">
+                                <transition-group 
+                                    name="photo"
+                                    tag="ul"
+                                    mode="out-in"
+                                    enter-active-class="animated slideInRight"
+                                    leave-active-class="animated slideOutLeft">
+                                    <li class="photo-item" v-for="(imgsource, index) in image" :key="index" v-show="index==currentImg">
+                                        <a href="#"><img v-bind:src="imgsource"></img></a>
+                                    </li>
+                                </transition-group>
+                            </div>
+                        </div>
+                    </div>
+                </transition>
+            </div>
+            <div id="about-container">
+                <transition
+                    name="about"
+                    enter-active-class="animated rotateInDownRight"
+                    leave-active-class="animated rotateOutUpRight">
+                    <div id="about" v-show="aboutShow">
+                        <ul class="about-list">
+                            <li><a class="about-item">A Touch for Both of Us</a></li>
+                            <li><a class="about-item">Aimishan</a></li>
+                            <li><a class="about-item">aimishan@163.com</a></li>
+                            <li><a class="about-item">Welcome</a></li>
+                        </ul>
+                    </div>
+                </transition>
+            </div>
         </div>
         <script src="app.js"></script>
     </body>
