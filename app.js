@@ -7,7 +7,7 @@ main = new Vue({
         aboutShow: false,
         noneWidget: true,
         currentImg: 0,
-        image: ["1.png", "2.png", "3.png"],
+        image: ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png", "9.png", "10.png", "11.png", "12.png", "13.png", "14.png", "15.png", "16.png", "17.png", "18.png", "19.png"],
         currentEssay: 0,
         currentWidget: "noneWidget"
     },
@@ -52,7 +52,7 @@ main = new Vue({
             this.switchWidget("aboutShow")
         },
         switchPhotoLeft: function() {
-            if(this.currentImg < 2)
+            if(this.currentImg < 18)
                 this.currentImg += 1
         },
         switchPhotoRight: function() {
