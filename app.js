@@ -28,50 +28,28 @@ main = new Vue({
         }
     },
     methods: {
-        toggleSlidebar: function() {
-            if(this.currentWidget != "slidebarShow") {
+        switchWidget: function(widget) {
+            if(this.currentWidget != widget) {
                 this[this.currentWidget] = false;
-                this.currentWidget = "slidebarShow";
-                this.slidebarShow = true;
+                this.currentWidget = widget;
+                this[widget] = true;
             }else{
-                this.slidebarShow = false;
+                this[widget] = false;
                 this.noneWidget = true;
                 this.currentWidget="noneWidget"
             }
-            if(this.currentEssay != 0)  this.currentEssay = 0;
+        },
+        toggleSlidebar: function() {
+            this.switchWidget("slidebarShow");
         },
         toggleLetters: function() {
-            if(this.currentWidget != "lettersShow") {
-                this[this.currentWidget] = false;
-                this.currentWidget = "lettersShow";
-                this.lettersShow = true;
-            }else{
-                this.lettersShow = false;
-                this.noneWidget = true;
-                this.currentWidget="noneWidget"
-            }
+            this.switchWidget("lettersShow");
         },
         toggleDiscovery: function() {
-            if(this.currentWidget != "discoveryShow") {
-                this[this.currentWidget] = false;
-                this.currentWidget = "discoveryShow";
-                this.discoveryShow = true;
-            }else{
-                this.discoveryShow = false;
-                this.noneWidget = true;
-                this.currentWidget="noneWidget"
-            }
+            this.switchWidget("discoveryShow");
         },
         toggleAbout: function() {
-            if(this.currentWidget != "aboutShow") {
-                this[this.currentWidget] = false;
-                this.currentWidget = "aboutShow";
-                this.aboutShow = true;
-            }else{
-                this.aboutShow = false;
-                this.noneWidget = true;
-                this.currentWidget="noneWidget"
-            }
+            this.switchWidget("aboutShow")
         },
         switchPhotoLeft: function() {
             if(this.currentImg < 2)
