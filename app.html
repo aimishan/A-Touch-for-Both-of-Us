@@ -24,25 +24,985 @@
                     name="slide"
                     enter-active-class="animated fadeInLeft"
                     leave-active-class="animated fadeOutLeft">
-                    <div id="slidebar" v-show="slidebarShow">
+                    <div id="slidebar"   v-show="slidebarShow">
                         <ul id="slidebar-list">
-                            <li><a class="slidebar-item" href="#">心跳的遗迹</a></li>
-                            <li><a class="slidebar-item" href="#">罗曼史发端</a></li>
-                            <li><a class="slidebar-item" href="#">表白</a></li>
-                            <li><a class="slidebar-item" href="#">关于写作和孤独的想法</a></li>
-                            <li><a class="slidebar-item" href="#">从过去到现在，再到未来</a></li>
+                            <li><a v-on:click="currentEssay=1" class="slidebar-item" href="#">心跳的遗迹</a></li>
+                            <li><a v-on:click="currentEssay=2" class="slidebar-item" href="#">罗曼史发端</a></li>
+                            <li><a v-on:click="currentEssay=3" class="slidebar-item" href="#">表白</a></li>
+                            <li><a v-on:click="currentEssay=4" class="slidebar-item" href="#">关于写作和孤独的想法</a></li>
+                            <li><a v-on:click="currentEssay=5" class="slidebar-item" href="#">从过去到现在，再到未来</a></li>
                         </ul>
                     </div>
                 </transition>
             </div>
-            <div id="essays-container"></div>
+            
+            <div id="essays-container">
+                    <transition-group
+                        name="essay"
+                        tag="ul"
+                        enter-active-class="animated slideInLeft"
+                        leave-active-class="animated slideOutRight">
+                    <li class="essay-item" :key="1" v-if="1==currentEssay">
+                        <div class="novel novel-1">
+                                    <h1 class="novel-title">心跳的遗迹</h1>
+                                        <p class="md_block">
+                                                <span class="md_line">隧道还有很多很多，很长很长。我想发给你的信息只能那样慢慢慢慢爬到你的眼前。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">刚入学的那会我便和你们混在一起了，理由是我不怎么喜欢和男生一起玩。或者只是单纯藉着和你们的熟悉，因而无所顾忌。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">一个人问我，是不是因为当中有你喜欢的女孩。我点点头。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">然后他又问，是不是她？</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">我当时琢磨了很久，并没有很快答复——可我明明在之前已经点头了的——为什么偏偏犹豫了呢。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">其实我也不知道那是一种怎样的感觉——兴许还是像初中和高中那样，随着时间推移就会慢慢变淡，只要我不去注意，不去想，就不会让人难受的那种好感吧。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">但是最后我还是点头了。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">那种喜欢从来都没有变淡，没有被时间消磨。我仍然会为每一次能够和你见面，和你说话，能和你一起做什么的时刻，感到无比的荣耀——真的是荣耀——仿佛什么不好的都会烟消云散。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">虽然有时候我在你面前脾气会变得不好，但是当那种在乎的感觉发酵的时候，总有声音和我说：</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">你真的已经是我所能遇见的，我用光了所有幸运去邂逅的，那个最好的家伙。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">其实说起来我点头的时候所想的什么，早就记不得了，不过那是我心里头给出的最早的，关于你的答案。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">只是我的信心还没有那么强烈——所以过去的一年里，我总这么和自己说，或是在散步的时候和别人说：</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">我有喜欢的人了，她和我很近很近。也许我只能祝福她吧。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">我每时每刻都在构想和你一起的未来，每时每刻也在否定它。至少那时候，我脑海里的剧情是，你会告诉我，你现在不想谈恋爱——但是却在以后的某天，通知我你恋爱了的消息。我那么怯懦，那么恐慌，生怕你出现一丝一毫离开的迹象——我没有那样开过口，这样我们就能永远是好朋友了。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">我什么心思都会和你诉说——或者都曾经说过。只有那一点关于你的心思，你从来从来都不知道。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">有时我发现自己竟然那么在乎你。可我不想承认。我们已经像情侣一样靠近了，我以为这就是最近的距离了。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">如果那天我没有早睡的话，可能一切都还是照常吧——这些是我所想的“万一”。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">我在那个时候才知道我有那么那么在乎你——是对待恋人、对待妻子的那种在乎。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">我总说自己胆小怯懦，但为了不失去一个重要的人，我想试一试。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">于是我听到了你的答案。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">你在身边，借用别人的一句话，就是，“我就想拥有了一副盔甲，也有了一块软肋”。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">我常常害怕被人关注，所以有时候连举起镜头的勇气都没有——尽管我真的很想把眼前的什么记录下来。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">我也总是消极的，常常把那些消极的情绪带给你。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">然后我又总胡闹，又很不自觉。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">你总那么好那么好。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">我甚至不知道怎么去使用形容词了。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">我以前觉得，如果用别的语言去表达一切我难以启齿的东西会不让我那么难堪，那就再借用一句台词。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">“You complete me.”</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">我想花余生所有的时间跟你证明，</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">我爱你，</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">这一件每天每天都想告诉你的事情。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">你老说自己有很多缺点，你还说我们可以慢慢来，先各自适应彼此的状态。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">那我便再借用一句话好了。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">“余生很长，请多多指教。”</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">因为你的存在，现在什么都很好，甚至比以往我做的什么梦，都更要好。</span>
+                                            </p>
+                                </div>
+                    </li>
+                    <li class="essay-item" :key="2" v-if="2==currentEssay">
+                        <div class="novel novel-2">
+                                    <h1 class="novel-title">罗曼史发端</h1>
+                                        <p class="md_block">
+                                                <span class="md_line">“你记得我们第一次牵手是在什么时候吗？”</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">“不是……今天吗？”</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">“其实不是的。我们第一次牵手是去年迎新晚会排练的时候。你来看我们，然后跳舞的时候有两个人没来，我们俩就去凑数了。那是我们第一次牵手。”</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">“你怎么会记得那么久之前的事情……”</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">“因为这些都是关于你的事情呀。那些你不记得的，我都帮你记着。”</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">我们方散完步。晚饭的时候她坐在我的对面。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">“我都能想到你要我下来散步的剧情。”我一边说。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">“你的室友会问你为什么我没有约你去散步。”</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">“你会复述我问你的问题，说，我问过你晚上要不要自习，你回答还要准备大学物理的考试。”</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">“你的室友会说你傻。因为我的意思其实不是你真的要不要复习。”</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">“而是我就要走了，也许我们还有这些时间可以多说一些话。”</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">有时候我说的话总是很含蓄，所以她老是体会不到。但是我超级喜欢她的这种状态——不论是有没有真正理解到我的意思。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">散步的时候我解释道，我表面上问着你要不要自习，虽然心里面有一个预期的答案，但是却真的有这层含义。我不想因为我而影响你的复习。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">说起来我和她应该是交往了一年多了。从2016年国庆节的某一天她打来深夜的电话开始。我一直在做一个和她共度一生的梦。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">我说，我从小就在暗恋别的家伙。所以到大学还是这个样子。这个我喜欢的家伙在我进入大学的时候就闯进了我的生活。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">在去年的国庆节，我和她两个人去都江堰——那也许是第一次真正意义上我和她一同的旅行。她还陪我去过别的很多地方。我每一次都非常庆幸。但是在那时候，我就想告诉她我的心情——可是如果那时候我便表白的话，答案会很不同——这是现在的她告诉我的。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">下午四点许，我在本学期的最后一门考试结束，第二天早晨便要出发了。她陪我去买火车上吃的零食，而后我们就各自回寝了。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">在即将分开的时候，我问她，你晚上要自习吗？</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">她回答，嗯，还要看大学物理。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">我心里其实是很失落的。于是慢吞吞找到行李箱，开始准备明天的行程了。过了一会，我接到她的电话。她问我行李有没有整理好，有没有空闲——我突然开始惊喜了。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">我告诉她也许我们晚上七点可以一起出来。可是待会挂掉电话，我看到来自她的信息：</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">“晒太阳去不去？”</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">我想，这是来自她的又一份礼物。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">我懊悔于刚才电话里的回答，马上走出门，一边拨通了她的电话。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">“晒太阳的话。”</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">“现在吧。”</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">“现在就好。”</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">因为我想在什么时候都能看到你的样子。现在就好。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">我们绕着学校那条外围的大路走了很久。我们一路说了许多。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">我讲起来我小时候的故事，这些我或许没有和她说过。其实我想把发生在我生活中的，以前的所有的事情，都讲给她听。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">“如果要结婚的话。我还需要很多时间。我还要在自己22周岁之前，把自己变得足够优秀。优秀到可以和你结婚。”</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">那一条栽着银杏树的人行道上，上面匆匆经过许多行人。我俩也从那走过。她有点想笑。我总是偷偷看她。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">“其实你不用刻意改变的。”我说，“以前你喜欢和谁一起出来吃饭，或者是做一些别的什么。但是现在没有了。所以我总是担心你是因为我在做这些改变。我会愧疚的。”</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">她不解，说，两个人在一起的话，要比三个人可以多说一点东西呀。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">我解释道，我知道如此——只是我的意思是，如果你想和她们一起的话，那就还是原样就好了。如果说你是因为考虑到我的感受，拒绝和你明明以前那么在意的伙伴，那我会很惭愧的。我这样想，你是我的。但她们没有这样拥有过你。所以千万不要因为我而改变一些以前你看重的东西。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">“那时候我和你说，我们恋爱了。但是其实我们算是已经交往一年了。只是我们总不承认——或者是你不愿意承认——可我总会等。我会追你，但是不让你知道。我会追到你说好的那一天。”</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">她不好意思地笑。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">一切故事发端的那天早晨。这些都是我想过的东西。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">有那样一个我不知道的家伙，他那么幸运，追到了你。但我什么也不能做。我只能对你说“祝福你呀”。然后我失去一个喜欢的，重要的女孩。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">也许我做不到真心的祝福。但我会由衷地羡慕。现在我庆幸极了。我羡慕的这个男孩是我自己。那我的祝福便是发自内心的，真诚的。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">我希望我们会一直走下去。我会一直等你。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">你说，你之所以也是小心翼翼的，是因为你也不敢确定，你面对的这个男生，是不是怀着和你一样的想法。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">真是幸运。他也喜欢着你。他在你还没有意识到的时候，就怀着对你的爱慕和珍惜。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">两个月很长不是吗？</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">“如果能早一些就好了。两个月，太长了。”我有些遗憾。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">“但是如果更早的话，我们的结果说不定就不一样了。”</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">她说，因为她和我一样，她不确定所有关于我的事情。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">原来我们互相都不曾确定，最后终于找到彼此。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">“我害怕我们关系的每一次增进都会让你感到难堪，所以我总是遵循着以前我们的准则。我想尊重你的所有决定。”</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">“那这样我们和朋友有什么区别呢？”</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">“其实我们早就不是朋友了。我觉得，当我们相互依赖，相互在乎的时候，我们就已经不再是朋友了。在我的世界里，我只差占有你。”</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">她说，把手拿出来。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">我于是把手伸出去。她攥紧了我的手。我的手凉凉的，她也是。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">我们俩都忍住自己的笑。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">她问我，是不是如果她不主动的话，我便不会提这些要求。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">是的。我不想太让你难堪了。我觉得你比我还要放不开。所以我不敢主动做那些事情——那些我们可以做的事情。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">在晚饭结束以后，走到一处地方，我说，你把眼睛闭起来。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">她迟疑了一会，闭起了眼睛。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">我掀开她的头发，亲吻了她的面颊。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">这是我没有经过她同意做的事情。这一天马上要结束了。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">她说，我是不是还没有说过“我喜欢你”？</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">“还没。”</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">“你可以把这个当惊喜。”</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">“情人节的时候送给我。”</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">还没等我说完，她便说：</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">“我喜欢你。”</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">我记起来一句电影里的台词。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">“once more would be nice.”</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">我等到了来自我喜欢的家伙的这句话。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">于是我告诉她。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">我也喜欢你这样的家伙。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">我要给你所有我能想到和做到的惊喜。</span>
+                                            </p>
+                                </div>
+                    </li>
+                    <li class="essay-item" :key="3" v-if="3==currentEssay">
+                            <div class="novel novel-3">
+                                    <h1 class="novel-title">表白</h1>
+                                        <p class="md_block">
+                                            <span class="md_line">这个故事是这样的：</span>
+                                        </p>
+                                        <p class="md_block">
+                                            <span class="md_line">那天晚上，我有点困，于是和一位友人说：“虽然现在才八点，不过太困了，那我就睡觉去了。”之后便没有顾忌后面可能会发生的事情。</span>
+                                        </p>
+        
+                                        <p class="md_block">
+                                            <span class="md_line">第二天早上，八点，闹钟响了。我拿起手机来，突然看到她发来的信息。她说，我想和你说些事情，但是我怕这很影响你的心情。</span>
+                                        </p>
+        
+                                        <p class="md_block">
+                                            <span class="md_line">我忽而觉得也许发生了什么变故——也许是她要恋爱了——我可能要失去她了。</span>
+                                        </p>
+        
+                                        <p class="md_block">
+                                            <span class="md_line">尽管一开始我还特别乐观地和她说，似乎现在没有什么事情会影响我的心情了吧——但是转念一想，那些所有关于她的事情，一点一滴都会让我焦虑——如果正是有关于她的消息呢？</span>
+                                        </p>
+        
+                                        <p class="md_block">
+                                            <span class="md_line">我开始害怕了。我想到一个我从未知道的男生走进了她的生活，而我不自知——而且这样一来，我要损失的，是一个特别特别重要的家伙。</span>
+                                        </p>
+        
+                                        <p class="md_block">
+                                            <span class="md_line">她开始回复我的信息是在半个小时以后。她告诉我，不是那样。</span>
+                                        </p>
+        
+                                        <p class="md_block">
+                                            <span class="md_line">我稍微松了一口气，好歹放下一点心来——可依旧担心。她告诉我，她昨天去看了一部电影，这部电影让她想到了一些事情，产生了一些新的想法。</span>
+                                        </p>
+        
+                                        <p class="md_block">
+                                            <span class="md_line">她问我，为什么互相喜欢着的两个人最后会选择分开？我告诉了她我自己的答案。</span>
+                                        </p>
+        
+                                        <p class="md_block">
+                                            <span class="md_line">她说，有人曾经告诉她，她未来的男朋友肯定很累，所以她觉得没有人会这么快就想体验累的感觉。</span>
+                                        </p>
+        
+                                        <p class="md_block">
+                                            <span class="md_line">我这时候多想告诉她我的想法——这个人只是还没有告诉你，而且他很想——他不觉得累。</span>
+                                        </p>
+        
+                                        <p class="md_block">
+                                            <span class="md_line">她觉得毕竟大家都会随着时间分散的——也许是所有的人。</span>
+                                        </p>
+        
+                                        <p class="md_block">
+                                            <span class="md_line">我虽然一直自诩为一个悲观的家伙，但很想很想告诉对面的这个女孩——我没有人们最后会不会分散这个难题的答案，但是我现在，至少现在碰见这么一个人，她让我相信有时候，一个人其实是可以不那么孤独的。</span>
+                                        </p>
+                                        <p class="md_block">
+                                            <span class="md_line">“这个家伙我大一的时候便遇见了。”</span>
+                                        </p>
+                                        <p class="md_block">
+                                            <span class="md_line">“她从来没出现在我的哪篇文章里。”</span>
+                                        </p>
+        
+                                        <p class="md_block">
+                                            <span class="md_line">“但是，我每一个特别特别美好的梦都和她有关。”</span>
+                                        </p>
+        
+                                        <p class="md_block">
+                                            <span class="md_line">她说，真好。</span>
+                                        </p>
+        
+                                        <p class="md_block">
+                                            <span class="md_line">“不要没有自知之明了，这个家伙就是你。别破坏气氛了。”我都告诉她了。</span>
+                                        </p>
+        
+                                        <p class="md_block">
+                                            <span class="md_line">她发给我一个“笑哭”的表情，说气氛难道不是已经被破坏了。</span>
+                                        </p>
+        
+                                        <p class="md_block">
+                                            <span class="md_line">“哼。”</span>
+                                        </p>
+        
+                                        <p class="md_block">
+                                            <span class="md_line">“你说你这么重要。”</span>
+                                        </p>
+                                        <p class="md_block">
+                                            <span class="md_line">“你脱单了。”</span>
+                                        </p>
+                                        <p class="md_block">
+                                            <span class="md_line">“你结婚了。”</span>
+                                        </p>
+                                        
+                                        
+                                        <p class="md_block">
+                                            <span class="md_line">“那个男的都不是我。”</span>
+                                        </p>
+                                        
+                                        
+                                        <p class="md_block">
+                                            <span class="md_line">“我会很难受。”</span>
+                                        </p>
+                                        
+                                        
+                                        <p class="md_block">
+                                            <span class="md_line">我表白她这些话，因为我在看到最早的那些消息的时候，我真的在害怕失去这个家伙——因为我喜欢她，我想永远都不失去她——我终于敢在那个时候告诉她这些事情。</span>
+                                        </p>
+                                        
+                                        
+                                        <p class="md_block">
+                                            <span class="md_line">她终于说，其实昨天晚上她要说的，是：</span>
+                                        </p>
+                                        
+                                        
+                                        <p class="md_block">
+                                            <span class="md_line">我们有没有机会…嗯…谈恋爱？</span>
+                                        </p>
+                                        
+                                        
+                                        <p class="md_block">
+                                            <span class="md_line">我看着手机发呆。</span>
+                                        </p>
+                                        
+                                        
+                                        <p class="md_block">
+                                            <span class="md_line">我心里面疯狂地点头：有，只要你想。</span>
+                                        </p>
+                                        
+                                        
+                                        <p class="md_block">
+                                            <span class="md_line">我每天都在做梦和你结婚。</span>
+                                        </p>
+                                        
+                                        
+                                        <p class="md_block">
+                                            <span class="md_line">我和别人谈恋爱的时候，我总要担心你怎么办。我一直不敢告诉你这件事情，就是我知道，如果你对一个把你定位成好朋友的家伙告白——那么你们的关系就会破裂。我不想失去你。但我天天在想着和你结婚——不光是恋爱。</span>
+                                        </p>
+                                        
+                                        
+                                        <p class="md_block">
+                                            <span class="md_line">是结婚结婚结婚。</span>
+                                        </p>
+                                        
+                                        
+                                        <p class="md_block">
+                                            <span class="md_line">就这样。</span>
+                                        </p>
+                                        
+                                        
+                                        <p class="md_block">
+                                            <span class="md_line">于是她打电话来，我终于开始正视喜欢她这件事。——但我没有底，于是说，我没有叫你答应，我只是……告诉你了这些事情而已。</span>
+                                        </p>
+                                        
+                                        
+                                        <p class="md_block">
+                                            <span class="md_line">挂掉了电话，我心里忐忑不安——我在等待午饭那时候和她见面。</span>
+                                        </p>
+                                        
+                                        
+                                        <p class="md_block">
+                                            <span class="md_line">就像《月色真美》里面的两个人一样，仿佛表白之后的第一眼都会很不一样——她一直就很不一样。</span>
+                                        </p>
+                                        
+                                        
+                                        <p class="md_block">
+                                            <span class="md_line">我们去散步了。</span>
+                                        </p>
+                                        
+                                        
+                                        <p class="md_block">
+                                            <span class="md_line">我们又说起早上所说的那些事情。</span>
+                                        </p>
+                                        
+                                        
+                                        <p class="md_block">
+                                            <span class="md_line">——其实我还是害怕的，所以我还是说，我还没有22周岁，我们还有很久，你可以不答应……</span>
+                                        </p>
+                                        
+                                        
+                                        <p class="md_block">
+                                            <span class="md_line">她问我，你想知道答案吗？</span>
+                                        </p>
+                                        
+                                        
+                                        <p class="md_block">
+                                            <span class="md_line">像沈佳宜问柯景腾问的那个问题一样。</span>
+                                        </p>
+                                        
+                                        
+                                        <p class="md_block">
+                                            <span class="md_line">我把他们两个的故事这样复述给她，然后说，我现在是不是也面临着这样的选择？</span>
+                                        </p>
+                                        
+                                        
+                                        <p class="md_block">
+                                            <span class="md_line">我们最后在园区分开了。</span>
+                                        </p>
+                                        
+                                        
+                                        <p class="md_block">
+                                            <span class="md_line">我打开手机，我问，你不是问“你想知道答案吗？”</span>
+                                        </p>
+                                        
+                                        
+                                        <p class="md_block">
+                                            <span class="md_line">我不想像那个家伙一样遗憾了。</span>
+                                        </p>
+                                        
+                                        
+                                        <p class="md_block">
+                                            <span class="md_line">所以我说，</span>
+                                        </p>
+                                        
+                                        
+                                        <p class="md_block">
+                                            <span class="md_line">“我觉得如果我像柯景腾一样犹豫不决。”</span>
+                                        </p>
+                                        
+                                        
+                                        <p class="md_block">
+                                            <span class="md_line">“万一你答应了呢？”</span>
+                                        </p>
+                                        
+                                        
+                                        <p class="md_block">
+                                            <span class="md_line">“那就变成遗憾了。”</span>
+                                        </p>
+                                        
+                                        
+                                        <p class="md_block">
+                                            <span class="md_line">她说，我回答你了呀。没有遗憾。</span>
+                                        </p>
+                                        
+                                        
+                                        <p class="md_block">
+                                            <span class="md_line">我怀揣不安。</span>
+                                        </p>
+                                        
+                                        
+                                        <p class="md_block">
+                                            <span class="md_line">“让我再确认一遍。”</span>
+                                        </p>
+                                        
+                                        
+                                        <p class="md_block">
+                                            <span class="md_line">“你的回答是，你答应了。”</span>
+                                        </p>
+                                        
+                                        
+                                        <p class="md_block">
+                                            <span class="md_line">她回答说：“嗯。”</span>
+                                        </p>
+                                        
+                                        
+                                        <p class="md_block">
+                                            <span class="md_line">胜过万语千言。</span>
+                                        </p>
+                                    </div>
+                    </li>
+                    <li class="essay-item" :key="4" v-if="4==currentEssay">
+                        <div class="novel novel-4">
+                                <h1 class="novel-title">关于写作和孤独的想法</h1>
+                                        <p class="md_block">
+                                                <span class="md_line">邮件收到，谢谢你写来的文字。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">这些日子，我一直在思考自己以前所写的文章，是不是真的如你们所说，有着那样令人感同身受的力量。今天在一个地方看到别人的投稿，发现他们的文字，竟和我的近乎一样，遂让我有了一种厌恶的感觉。我的脑海里忽然闪过一个概念，叫做“堆砌的意象”。重新回看我所写的东西，无非是儿女情长，无端的忧愁与闲思，以及对自己的否定而已。每每写到此处，便是各种的否定句式，套用上哀婉的语气，以为这就是内心的真实写照。其实我本不必这样。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">高三那年，我窝在自己房间里，关上门，然后把能找得到的以前的文字翻出来，整理在一起，又花了一天的时间阅览，写了一篇总结，虽然没有标题，但内容相较于现在的东西，规模要大多了。这篇总结详尽地记载了我在初中、高中留下的幼稚的“作品”的梗概与特点种种，但没有提出什么有用的问题，更别说思想上的不成熟与笨拙了。说起来，十五六岁的忧愁，不过是情窦初开时的沮丧，焦躁和欢喜，因为涉世未深，世界里所缺的，将将是一个女孩而已。因而我借着这份追求不到的哀怨“创作”了不少悲剧结尾的小说，以此排遣和反映我在现实的失意。不过设想是好的，真正完结了的却寥寥一部罢了。这里我就不详细介绍了。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">大学以后，我对小说的尝试越来越少，所谓的散文逐渐占了上风，这在高中是我从未想到过的。得益于大学生活的多样性与经历的丰富化，我所能书写下来的故事增加许多，可思想的实质内核依旧没有摆脱中学的基调。你能看到，我依旧困在“她”的阴影里，叙述着“她”的故事。“她”并不是同一个人，在我的文本里已经泛化成一个完美的女子的形象，是我最喜欢塑造的“典型人物”之一，其二便是“他”了。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">我们先说“她”的问题。日常生活里我喜欢做的事情，是散步。因为散步意味着我可以听到别人的故事，并将其记录下来，变成一个凄婉的情节。一个很平常的事件，当我戴上宛若滤镜般的视角去观察和拓展时，便会自然而然沾染上我那天生的悲凉的气氛。与此同时，整个事件的人物也会被模糊，最终变成两个人，即“我”和“她”的对话。这样的好处是我可以随意臆造人物的心理和文艺化口语，缺点亦很明显：这些故事的形式太过于单一，久而久之就会让人产生审美疲劳。所以我最近一直想重拾小说的写作，可始终未遂焉。总结起来，不过是我所想表达的，仍然拘泥于我对这个被扁平化人格后的女孩的观察，“她”是美的，是完美的，是忧愁的，唯独不是真实存在的，是失真的。我太喜欢堆砌一些无端的忧愁，就像是给自己找麻烦，以致失了本心，连现实的故事也写不出来了。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">那这就是“他”的问题了。文章里，我想你也可以猜到，所有的“他”其实都是“我”的化身，拥有我的所有的负面情绪，包括恐惧、自卑与满心的忧愁。我特别纠结的是，我不敢描写欢喜的场景，因为那仿佛会败坏了那天然的悲伤的氛围—毕竟如果不是为了抒发这闲愁，也不必冷静下来写些东西了。正是如此，我做到了一个悲观主义者该做的所有事情：相聚的时候念到别离，喧嚣的时候想到凄清，两相衬托，就越使人难过，文字无论如何也无法愉悦起来了。我始终在寻求这样一个内核上的突破，于是尝试了在《觥筹和烟雾》里叙述“大胆”的内容，读下来发现，虽然仍是对话的老套形式，但人物已经稍微丰满起来，格局也总算真正置入于社会中了。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">我想，我之所以厌恶那种看似“朴实”的文字，正是厌恶自己那种随意堆砌所谓“美的东西”的原因吧。我会想尽一切捏造一个比喻，不论是否真的必要，更甚者，全篇皆是所谓的“美”，读起来着实头疼。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">我的脑海里始终有新的写作的念头，但一直想着突破，想着不落俗套，常常未能下笔辄搁浅了。这样固然不好，不过就算写出来，不尽如人意的话，还不如沉在心里，以后再取用之。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">说回到你的问题。孤独对任何人来说都是必修课，不管是不是一个情感细腻的人。我常常担心和顾虑，那些不读书的人，他们如何表达自己的孤独呢？后来我去调查，兴许他们脑海里，压根没有“孤独”的概念，仿佛人生本就如此，追问“为什么”是没有用处的。现在你知道“孤独”的存在，细细思考以后开始恐惧，害怕这种状态会永远持续下去。我觉得这才是正常的结果。不被人关心，是一种早就熟知和习惯的道理，被人关心，则是一种应该感激的幸运。毕竟我们都是作为一个个体存在于这个世界上，虽说我们之间可能有错综复杂的关系，但我本不需要花时间和精力去“关心”一个现在对我来说“不那么重要”的人，因为这是不经济的。只有当我珍视这段友谊，认定它会走到很远，那样才值得我去付出对你的“关注”。因为在身边、不在身边的诸多友谊对我来说，只是短暂的联系，便不那么需要“关心”了。我的情况和你很相似，我认识那么多的人，在我真正需要的时候，却很少有倾诉的地方，所以我逐渐养成了给自己讲故事的习惯，这些故事的一部分变成了如今你能看到的文字，也就是我方前所讨论的问题。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">大家其实都在孤独着，因为或许和人联系起来会更加疲惫。想一想，一个人愿意花时间听你倾诉，Ta的目的是什么？是为了更好的了解你，或者，只是一种义务和“不得不”而已。反过来，为什么你的倾诉不能随随便便说给别人听？我猜答案是因为，你所要倾诉的，会改变那些不那么真正了解你的人对你的良好印象，再或是你觉得这个人没有必要了解你，仅此而已。 </span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">我只是有一种很模糊的理解，即是，我们要把自己全副武装伪装起来，给人留下一个我们所认为他们应该了解的自己的形象，这是足够了的，但我们还有背后的一面，这一面大多是负面的，甚至是变态的，故而更不能让人知道。因为倘让人知道了你的真实心思，你兴许会被嘲笑，被排挤，或者干脆不被理解，不论那些人是否拥有和你一样的心理。所以只有挚友才能，才有资格了解你的真实想法。问题是，是什么让你的真实想法不能成为一个公开的想法，并最后让你感受到“孤独”的存在？我觉得孔子说的话是有道理的，“思而不学则殆”。对比起诸多对情感笨拙的人来说，我们至少感受到“孤独”了。中学的时候，我意外接触到川端康成的《雪国》，并深深为他的文字所折服，那是我第一次认识到“文字”在忧愁当中的震撼，此后我一直试图模仿这种风格，虽然未能成功，但多少体会到“纯洁之美”的存在了。以后看到王小波和鲁迅的作品以后，越觉得他们的东西，真切解决了我的许多困局。所以这儿，你不如多去看看他们的作品，兴许我们所纠结的，早就已经是定局了。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">写这封邮件的时候，我有提到很多问题，而且我忽然很有理由相信，答案肯定是存在在什么地方的，我应该多去找找看。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">多说一句，孤独是我在文字里常常提到的意象，可我一直未能找到理解孤独的方法，所以只能不断地感知其猖狂肆虐，如果哪天你找到了有关孤独的答案，请务必告诉我。</span>
+                                            </p>
+                        </div>
+                    </li>
+                    <li class="essay-item" :key="5" v-if="5==currentEssay">
+                        <div class="novel novel-5">
+                                    <h1 class="novel-title">从过去到现在，再到未来</h1>
+                                        <p class="md_block">
+                                                <span class="md_line">小学时候，oppo手机曾经有一个广告，里面的内容虽然不是每一帧都记得，但情况大概是这样：一群男生把一个女生的眼睛蒙起来，然后领着她到一处地方，抓住她的手，轻触一部手机的屏幕，瞬间响起“Loving you”的声音。这个声音在我听到的那一阵子一直在回响，却总不知道到底是哪首歌曲。后来不知过了多久，一位同学的手机中再一次响起这个声音，勾起了我的念想，才知道原来是Super Junior的Me，于是拿着妈妈给的功能机，型号还记得，一款红色的Nokia C2-05，一遍又一遍循环，直至最后听厌了，遗忘在列表里。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">我特地提起这款功能机，是因为它也有着一种特别的含义。在还没有智能机的年代，一款可以拍照，可以上网，可以播放音乐和低分辨率视频的手机仿佛奇迹，我从此开启了一个时代，一个通过网络与其他人连结的时代。我从初中养成听歌写作业的习惯，所以往往也伴着一边写作业，一边聊短信的行为——彼时我和一些同学交换了手机号码，时不时发发短信交流一下——而最让我期待的是来自那个家伙的，那个至少在初中和高中时代都无比重要的女孩。她的号码我很晚才有，就像日剧和日漫里面那种交换邮箱就意味着进一步交往一样，我仿佛也拥有了更多的机会——其实不消说，在短信上我们还是很少互动，更多的还是借助于老套笨重却又无比具有吸引力的台式机上闪闪发光的聊天软件，以及伴随着QQ一同出现的QQ邮箱。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">她是不常常在线的，所以一有机会，我便和她说起很多自己的想法——直到现在还是如此，人却往往不同。我以为让她知道自己是一个孤独的人，能够更多得到她的关系和在乎——以此表明我和其他男生并非相同。仿佛其他男生没有自己的心思，永远是大大咧咧，永远鲁莽，永远不解人意。然而，我看起来才是最幼稚的那个——我才是一直在不合时宜地大大咧咧，我才始终在应该细谨的地方鲁莽，我才在他们需要的时候不解人意，最后却都被原谅。被过去的人原谅，因为那都是过去的事情了，没有谁认为幼稚无可原谅，被现在的人原谅，因为也许他们包容，仍然在为这份幼稚付出。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">这台功能机在我结束了初中时代以后，变成了弟弟的物品，我则换上了智能手机，品牌是vivo——对于缺少互联网引导的家伙来说，在线下门店选择要显得更为保守，也更为保险。这台手机没有陪伴我多久，大概在高二便退役，我又拥有了另一台看起来更好的，大屏幕vivo手机。这一次看起来就像是妈妈对线下门店的执念了——以后每一次的选择，线下门店都会成为压倒我的稻草。尔后是Nokia Lumia 830，是红米Note 3，是高中的骊歌。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">离别那年，很多人拿着毕业纪念册找到我，让我总要写点什么。我不屑，因为倘若要分离，那就散了就好了。所以我没有认真地写过什么。所以我开始惋惜了。过去的什么在回忆里都是有意义的——因为他们都是回忆的一部分。回忆越是丰富，那么故事也就愈要让人怀念。我那时候多傻，一个喜欢怀念过去的人，最后却没想过给回忆做些什么能够勾起回忆的事情。现在我又把那首小时候勾耳朵的Me找出来，还是一样熟悉的感觉。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">复古是一种风格，也是一种精神。过去的东西总是看起来可以被轻易原谅的——这里我们至少排除了一个民族一个国家的苦难的历史，仅仅对于个人而言，或者说，也要排除掉一些什么，那么大概就是这样的描述：我们选择性记住的，愿意、乐意记住的过往，总是值得怀念的，总是能够被轻易原谅的。现在我们所遇见的好的、不好的事情，是因为对现在的我们造成了积极的、消极的影响，对未来的我们，却只是一件既成的历史——怎么评判也好，怎么理解也好，都无法追溯了。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">正因为如此，我始终认为，现在是没有意义的。我有为现在努力过，更多的时间是在敷衍。对待学业如此，对待友谊也有着这样的矛盾——我们应该通过努力连结让值得留下来的人留下吗？还是任其发展，直到主动生疏呢？高中时我的最后一位同桌跟我说，他的选择是后者，而且他会做主动的那个——理由是人总归是会生疏的，不如早做主张。我有过不服气，有过相信这个结论，现在开始准备反驳了。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">我的理由不那么充分，因为所有让我感到希望或是绝望的，都是存在着的各色各样的人，以及他们带给我的各色各样的故事——我的理性总是被感性打败。友谊是需要维护的，比如交流，比如会面，我们这样做是因为我们始终抱有对友谊的尊重，抱着对互相的尊重。当我们在内心开始做友谊总会变淡的结论时，我们其实是不再看重对方了：我们在这个时间点相交，你在这个时候对我无比重要，但相交点之后，我们便要藉着那个角度越去越远——你不再是无可替代的了。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line md_line_dom_embed"><em>我们为什么不试试把那个角度扭转？</em></span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">我希望所说的话，至少这一次不再是悲观主义者的论调。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">我以往曾经喜欢过的家伙，我抱着淡忘的幻想，最后果然消失在了他们生活里面。因为我从未尝试过什么：有过短信，有过邮件，有过其他的通讯工具，有过见面交流，有过单独散步，有过谈心，有过梦，只是没有过未来而已。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">“你相信过爱的存在吗？我曾经相信过，但又开始不明白了。那些嘴上说着仍然爱着彼此的人，为什么最后还是选择分开呢？”</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">“有时候，我不认为爱是一种东西，它也许是占有、在乎和依赖的总和的存在。当三者之一消失了，那么爱就不再存在了。那些分手了的人，他们哪来的爱呢？大概不过是对一同度过的时间的怀念和留恋吧——那些轰轰烈烈的，甚至变成了怨恨的爱恋，充斥着的，则是黑暗和咒怨，是不愿意再被人提起的——只有那种慢慢变淡了的，甚至分离变成了必然的爱恋，被回味的时候，才有蜜糖的滋味。总会有蜜糖的滋味。我是经历过的，但我希望自己不要再回想了，我可不缺什么历史，不缺什么回忆，也不缺什么存在于过往的蜜糖了。”</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">虽然冬天看起来还远远没有要结束的样子，但肯定是要走到尾声的——大概还有一个寒假的样子，其实也不久——只需要每天出门散步去，看看街上过往的行人，拍摄几张到处热闹的景象，也就过去了。未来的事情，因为是不确定的，所以常常让人悲观，让人悲哀，也更让人沉浸在以往里难以自拔。但是仔细想想，也不是那么没有希望的，也不是那么不堪的，也不是那么平淡的——毕竟它总要来，它总是会变成历史。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">《那些年，我们一起追的女孩》里面，柯景腾对沈佳宜表白，沈佳宜问他，你想知道答案吗？我现在就可以告诉你。柯景腾回答，不要，因为我还没有问你，所以你也不可以拒绝我。我曾经为他们感到过惋惜——我害怕我会面临和他一样的抉择，会做出和他一样的决定。所幸这样的抉择并没有到来，我也不必为此操心。并且，这样的未来也不必为过去而懊悔：如果那时候，我能重新做一次决定就好了。</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">我的回答是“我想知道。”</span>
+                                            </p>
+                                            
+                                            
+                                            <p class="md_block">
+                                                <span class="md_line">她的回答是“嗯。”</span>
+                                            </p>
+                        </div>
+                    </li>
+                    </transition-group>
+            </div>
             <div id="letters-container">
-                <transition
-                    name="letters"
-                    enter-active-class="animated fadeInUp"
-                    leave-active-class="animated fadeOutDown">
-                    <div id="letters" v-show="lettersShow">
-                        <div id="letters-box">
+                    <transition
+                            name="letters"
+                            enter-active-class="animated fadeInUp"
+                            leave-active-class="animated fadeOutDown">
+                        <div id="letters-box"  v-show="lettersShow">
                             <ul class="letters-list">
                                 <li><a class="letters-item" href="#">如果是想要埋起来的心情，那就埋起来。不过我的好心情和坏心情，以前就都会告诉你了。我在哪，我在做什么，我要改变什么，老早老早以前就有告诉你的习惯了。你的想藏起来的小小世界，那就藏好吧:)</a></li>
                                 <li><a class="letters-item" href="#">你呀，就是最好最好的礼物。我说我们交往一年多了，这是正确的。然后我说，其实喜欢上你，也有一年多了。这是被兑现的喜欢，这是被幸运砸中的喜欢，这是被祝福的喜欢。</a></li>
@@ -57,15 +1017,14 @@
                                 <li><a class="letters-item" href="#">我等你。你慢慢来。让我先把生活中的很多问题经历过去，然后我就能看着你朝我跑来了。因为你可是要和我共同度过一生的人。</a></li>
                             </ul>
                         </div>
-                    </div>
-                </transition>
+                    </transition>
             </div>
             <div id="photos-container">
                 <transition
                     name="photo"
                     enter-active-class="animated slideInDown"
-                    leave-active-class="animated slideOutDown">
-                    <div id="photos" v-show="discoveryShow">
+                    leave-active-class="animated slideOutUp">
+                    <div id="photos"   v-show="discoveryShow">
                         <div id="photo-player">
                             <div id="photo-player-container">
                                 <transition-group 
@@ -73,7 +1032,7 @@
                                     tag="ul"
                                     mode="out-in"
                                     enter-active-class="animated slideInRight"
-                                    leave-active-class="animated slideOutLeft">
+                                    leave-active-class="animated slideOutRight">
                                     <li class="photo-item" v-for="(imgsource, index) in image" :key="index" v-show="index==currentImg">
                                         <a href="#"><img v-bind:src="imgsource"></img></a>
                                     </li>
@@ -85,10 +1044,10 @@
             </div>
             <div id="about-container">
                 <transition
-                    name="about"
-                    enter-active-class="animated rotateInDownRight"
-                    leave-active-class="animated rotateOutUpRight">
-                    <div id="about" v-show="aboutShow">
+                        name="about"
+                        enter-active-class="animated rotateInDownRight"
+                        leave-active-class="animated rotateOutUpRight">
+                    <div id="about"   v-show="aboutShow">
                         <ul class="about-list">
                             <li><a class="about-item">A Touch for Both of Us</a></li>
                             <li><a class="about-item">Aimishan</a></li>
