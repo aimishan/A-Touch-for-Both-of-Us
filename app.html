@@ -4,8 +4,12 @@
         <meta charset="UTF-8"></meta>
         <link rel="stylesheet" type="text/css" href="animate.css"></link>
         <link rel="stylesheet" type="text/css" href="app.css"></link>
-        <script src="vue.js"></script>
+        <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+        <!-- normal script imports etc  -->
         <script src="jquery-3.3.1.min.js"></script>
+        <script src="vue.js"></script>
+        <!-- Insert this line after script imports -->
+        <script>if (window.module) module = window.module;</script>
     </head>
     <body>
         <div id="main-container">
